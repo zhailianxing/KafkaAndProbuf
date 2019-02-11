@@ -59,6 +59,9 @@ func main() {
 				fmt.Println("zhai decode probuf:")
 				m, _, _, _ :=models.DecodeFromProtobuf(msg.Value)
 				fmt.Println(m)
+				fmt.Println(m["device_identity"])
+				fmt.Println(m["adgroup"])
+
 				//fmt.Fprintf(os.Stdout, "%s/%d/%d\t%s\t%s\n", msg.Topic, msg.Partition, msg.Offset, msg.Key, msg.Value)
 				consumer.MarkOffset(msg, "")    // mark message as processed
 				fmt.Println("zhai get  message over")
