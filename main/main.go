@@ -17,7 +17,7 @@ func main() {
 	config.Group.Return.Notifications = true
 
 	// init consumer
-	brokers := []string{"bigdatakafka.qtt.prd.1sapp.com:9092"}
+	brokers := []string{"your_kafka_host:9092"}
 	topics := []string{"log_wailaxin"}
 	consumer, err := cluster.NewConsumer(brokers, "my-test-consumer-group", topics, config)
 	if err != nil {
