@@ -1,0 +1,21 @@
+syntax="proto2";
+package dory;
+
+message ValueType {
+    optional int32 int_type =1;
+    optional int64 long_type = 2;
+    optional float float_type = 3;
+    optional string string_type =4;
+
+}
+
+message ReportLog {
+    required int64 timestamp =1;
+    optional string ip = 2;
+    optional group Field  = 3 {
+        repeated group Map = 1 {
+            optional string key = 1;
+            required ValueType value = 2;
+        }
+    }
+}
